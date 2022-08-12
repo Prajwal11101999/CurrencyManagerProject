@@ -1,0 +1,10 @@
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\obj\Debug\netcoreapp3.1\Currency.Data.csproj.AssemblyReference.cache
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\obj\Debug\netcoreapp3.1\Currency.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\obj\Debug\netcoreapp3.1\Currency.Data.AssemblyInfoInputs.cache
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\obj\Debug\netcoreapp3.1\Currency.Data.AssemblyInfo.cs
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\obj\Debug\netcoreapp3.1\Currency.Data.csproj.CoreCompileInputs.cache
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\bin\Debug\netcoreapp3.1\Currency.Data.deps.json
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\bin\Debug\netcoreapp3.1\Currency.Data.dll
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\bin\Debug\netcoreapp3.1\Currency.Data.pdb
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\obj\Debug\netcoreapp3.1\Currency.Data.dll
+C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\obj\Debug\netcoreapp3.1\Currency.Data.pdb
