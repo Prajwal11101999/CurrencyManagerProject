@@ -8,8 +8,4 @@
     <ProjectReference Include="..\Currency.Data\Currency.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>

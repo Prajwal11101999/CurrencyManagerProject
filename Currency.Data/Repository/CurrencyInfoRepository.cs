@@ -33,5 +33,29 @@ namespace Currency.Data.Repository
             };
         }
 
+        public void UpdateCurrency(CurrencyInfo currencyInfo)
+        {
+            foreach (var item in ListCurrency)
+            {
+                if(item.CurrencyId == currencyInfo.CurrencyId)
+                {
+                    item.CurrencyName = currencyInfo.CurrencyName;
+                    item.CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation;
+                    item.CurrencyValue = currencyInfo.CurrencyValue;
+                    item.ConvertedINRValue = currencyInfo.ConvertedINRValue;
+                }
+            }
+        }
+
+        public void DeleteCurrency(CurrencyInfo currencyInfo)
+        {
+            foreach (var item in ListCurrency)
+            {
+                if (item.CurrencyId == currencyInfo.CurrencyId)
+                {
+                    ListCurrency.Remove(item);
+                }
+            }
+        }
     }
 }
