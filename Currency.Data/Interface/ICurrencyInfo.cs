@@ -9,5 +9,6 @@ namespace Currency.Data.Interface
     {
         List<CurrencyInfo> GetAllCurrencyInfo();
         CurrencyInfo GetCurrencyInfo(int id);
+        void AddNewCurrency(CurrencyInfo currencyInfo);
     }
 }

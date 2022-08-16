@@ -24,5 +24,14 @@ namespace Currency.Data.Repository
         {
             return ListCurrency.FirstOrDefault(x => x.CurrencyId == id);
         }
+
+        public void AddNewCurrency(CurrencyInfo currencyInfo)
+        {
+            ListCurrency = new List<CurrencyInfo>
+            {
+                new CurrencyInfo{CurrencyId = ListCurrency.Count + 1 , CurrencyName = currencyInfo.CurrencyName , CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation , CurrencyValue = 1, ConvertedINRValue = currencyInfo.ConvertedINRValue}
+            };
+        }
+
     }
 }

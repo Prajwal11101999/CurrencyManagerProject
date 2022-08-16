@@ -22,3 +22,15 @@ C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\obj\Debug\netcorea
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Currency.Data.dll
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Currency.Data.pdb
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\obj\Debug\netcoreapp3.1\WebApplication7.csproj.CopyComplete
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\obj\Debug\netcoreapp3.1\WebApplication7.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\System.Web.Http.WebHost.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\WebActivatorEx.dll

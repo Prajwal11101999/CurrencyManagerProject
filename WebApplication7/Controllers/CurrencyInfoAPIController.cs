@@ -31,17 +31,28 @@ namespace WebApplication7.Controllers
             return currency.GetCurrencyInfo(id);
         }
 
-        // [HttpPost]
+        [Route("Currency/AddNew")]
+        [HttpPost]
+        public ActionResult CreateNewCurrency([FromBody] CurrencyInfo currencyInfo)
+        {
+            try
+            {
+                if (currencyInfo is null)
+                {
+                    return BadRequest("Owner object is null");
+                }
+                //if (!ModelState.IsValid)
+                //{
+                //    return BadRequest("Invalid model object");
+                //}
 
-        //[Route("Emp/All")]
-        //public string GetAllEmployees()
-        //{
-        //    return "Response from GetAllEmployees Method";
-        //}
-        //[Route("Emp/ById")]
-        //public string GetEmployeeById()
-        //{
-        //    return "Response from GetEmployeeById Method";
-        //}
+                currency.AddNewCurrency(currencyInfo);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+            return RedirectToAction("GetAllCurrencyInfo");
+        }
     }
 }
