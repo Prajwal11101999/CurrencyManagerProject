@@ -33,7 +33,7 @@ namespace WebApplication7.Controllers
 
         [Route("Currency/AddNew")]
         [HttpPost]
-        public ActionResult CreateNewCurrency([FromBody] CurrencyInfo currencyInfo)
+        public ActionResult<IEnumerable<CurrencyInfo>> CreateNewCurrency([FromBody] CurrencyInfo currencyInfo)
         {
             try
             {
@@ -43,8 +43,9 @@ namespace WebApplication7.Controllers
                 }
 
                 currency.AddNewCurrency(currencyInfo);
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");
             }
@@ -53,7 +54,7 @@ namespace WebApplication7.Controllers
 
         [Route("Currency/Update/{id}")]
         [HttpPut]
-        public ActionResult UpdateCurrency(int id, [FromBody] CurrencyInfo currencyInfo)
+        public ActionResult<IEnumerable<CurrencyInfo>> UpdateCurrency(int id, [FromBody] CurrencyInfo currencyInfo)
         {
             try
             {
@@ -68,34 +69,34 @@ namespace WebApplication7.Controllers
                 }
                 currency.UpdateCurrency(currencyInfo);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");
             }
             return RedirectToAction("GetAllCurrencyInfo");
         }
 
-        [Route("Currency/Delete/{id}")]
-        [HttpDelete]
-        public ActionResult DeleteOwner(int id)
-        {
-            try
-            {
-                var currencyInfo = currency.GetCurrencyInfo(id);
-                if (currencyInfo == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    currency.DeleteCurrency(currencyInfo);
-                }
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Internal server error");
-            }
-            return RedirectToAction("GetAllCurrencyInfo");
-        }
+        //[Route("Currency/Delete/{id}")]
+        //[HttpDelete]
+        //public ActionResult DeleteOwner(int id)
+        //{
+        //    try
+        //    {
+        //        var currencyInfo = currency.GetCurrencyInfo(id);
+        //        if (currencyInfo == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            currency.DeleteCurrency(id);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Internal server error");
+        //    }
+        //    return RedirectToAction("GetAllCurrencyInfo");
+        //}
     }
 }
