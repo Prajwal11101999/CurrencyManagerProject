@@ -45,7 +45,7 @@ namespace WebApplication7.Controllers
                 currency.AddNewCurrency(currencyInfo);
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Internal server error");
             }
@@ -69,34 +69,34 @@ namespace WebApplication7.Controllers
                 }
                 currency.UpdateCurrency(currencyInfo);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Internal server error");
             }
             return RedirectToAction("GetAllCurrencyInfo");
         }
 
-        //[Route("Currency/Delete/{id}")]
-        //[HttpDelete]
-        //public ActionResult DeleteOwner(int id)
-        //{
-        //    try
-        //    {
-        //        var currencyInfo = currency.GetCurrencyInfo(id);
-        //        if (currencyInfo == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            currency.DeleteCurrency(id);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Internal server error");
-        //    }
-        //    return RedirectToAction("GetAllCurrencyInfo");
-        //}
+        [Route("Currency/Delete/{id}")]
+        [HttpDelete]
+        public ActionResult DeleteOwner(int id)
+        {
+            try
+            {
+                var currencyInfo = currency.GetCurrencyInfo(id);
+                if (currencyInfo == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    currency.DeleteCurrency(id);
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+            return RedirectToAction("GetAllCurrencyInfo");
+        }
     }
 }

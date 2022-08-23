@@ -4,21 +4,17 @@ using System.Text;
 using System.Linq;
 using Currency.Data.Interface;
 using Currency.Data.Model;
+using Currency.Data.JsonDataFile;
+using System.Text.Json;
 
 
 namespace Currency.Data.Repository
 {
     public class CurrencyInfosRepository : ICurrencyInfo
-    {
-        public static List<CurrencyInfo> ListCurrency = new List<CurrencyInfo>();
-        //{
-        //    new CurrencyInfo{CurrencyId = 1, CurrencyName = "USA Dollar", CurrencyAbbreviation = "USD" , CurrencyValue = 1, ConvertedINRValue = 0},
-        //    new CurrencyInfo{CurrencyId = 2, CurrencyName = "Afghanistan Afghani", CurrencyAbbreviation = "AFN" , CurrencyValue = 1, ConvertedINRValue = 0},
-        //    // new CurrencyInfo{CurrencyId = 2, CurrencyName = "Afghanistan Afghani", CurrencyAbbreviation = "AFN" , CurrencyValue = 1, ConvertedINRValue = 0}
-        //};
+    { 
         public List<CurrencyInfo> GetAllCurrencyInfo()
         {
-            return ListCurrency;
+            var ListCurrency = JsonSerializer.Deserialize<List<CurrencyInfo>>()
         }
 
         public CurrencyInfo GetCurrencyInfo(int id)
@@ -30,11 +26,11 @@ namespace Currency.Data.Repository
         {
             if(ListCurrency.Count == 0)
             {
-                ListCurrency.Add(new CurrencyInfo { CurrencyId = 1, CurrencyName = currencyInfo.CurrencyName, CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation, CurrencyValue = 1, ConvertedINRValue = currencyInfo.ConvertedINRValue });
+                ListCurrency.Add(new CurrencyInfo { CurrencyId = 1, CountryName = currencyInfo.CountryName, CurrencyName = currencyInfo.CurrencyName, CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation, ConvertedINRValue = currencyInfo.ConvertedINRValue });
             }
             else
             {
-                ListCurrency.Add(new CurrencyInfo { CurrencyId = ListCurrency.Count + 1, CurrencyName = currencyInfo.CurrencyName, CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation, CurrencyValue = 1, ConvertedINRValue = currencyInfo.ConvertedINRValue });
+                ListCurrency.Add(new CurrencyInfo { CurrencyId = ListCurrency.Count + 1, CountryName = currencyInfo.CountryName, CurrencyName = currencyInfo.CurrencyName, CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation, ConvertedINRValue = currencyInfo.ConvertedINRValue });
             }
         }
 
@@ -42,25 +38,28 @@ namespace Currency.Data.Repository
         {
             foreach (var item in ListCurrency)
             {
-                if(item.CurrencyId == currencyInfo.CurrencyId)
+                if (item.CurrencyId == currencyInfo.CurrencyId)
                 {
+                    item.CurrencyId = currencyInfo.CurrencyId;
+                    item.CountryName = currencyInfo.CountryName;
                     item.CurrencyName = currencyInfo.CurrencyName;
                     item.CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation;
-                    item.CurrencyValue = currencyInfo.CurrencyValue;
                     item.ConvertedINRValue = currencyInfo.ConvertedINRValue;
+                    break;
                 }
             }
         }
 
-        //public void DeleteCurrency(int id)
-        //{
-        //    foreach (var item in ListCurrency)
-        //    {
-        //        if (item.CurrencyId == id)
-        //        {
-        //            ListCurrency.Remove(item);
-        //        }
-        //    }
-        //}
+        public void DeleteCurrency(int id)
+        {
+            foreach (var item in ListCurrency)
+            {
+                if (item.CurrencyId == id)
+                {
+                    ListCurrency.Remove(item);
+                    break;
+                }
+            }
+        }
     }
 }
