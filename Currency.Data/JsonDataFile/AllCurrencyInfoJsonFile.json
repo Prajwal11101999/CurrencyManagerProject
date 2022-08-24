@@ -1,39 +1,51 @@
-{
-  "CurrencyInfoDataList": [
-    {
-      "CurrencyId": 1,
-      "CountryName": "United States of America",
-      "CurrencyName": "American Doller",
-      "CurrencyAbbreviation": "USD",
-      "item.ConvertedINRValue": 79.88
-    },
-    {
-      "CurrencyId":2,
-      "CountryName": "Afganistan",
-      "CurrencyName": "Afgan Afgani",
-      "CurrencyAbbreviation": "AFN",
-      "item.ConvertedINRValue": 0.90
-    },
-    {
-      "CurrencyId": 3,
-      "CountryName": "Europe",
-      "CurrencyName": "Euro Doller",
-      "CurrencyAbbreviation": "EURO",
-      "item.ConvertedINRValue": 79.27
-    },
-    {
-      "CurrencyId": 4,
-      "CountryName": "China",
-      "CurrencyName": "Chinese Yuan",
-      "CurrencyAbbreviation": "RMB",
-      "item.ConvertedINRValue": 11.68
-    },
-    {
-      "CurrencyId": 5,
-      "CountryName": "Japan",
-      "CurrencyName": "Japanese Yen",
-      "CurrencyAbbreviation": "YEN",
-      "item.ConvertedINRValue": 0.59
-    }
-  ]
-}
+[
+  {
+    "CurrencyId": 1,
+    "CountryName": "United States of America",
+    "CurrencyName": "American Dollar",
+    "CurrencyAbbreviation": "USD",
+    "ConvertedINRValue": 79.76
+  },
+  {
+    "CurrencyId": 2,
+    "CountryName": "Afganistan",
+    "CurrencyName": "Afgan Afgani",
+    "CurrencyAbbreviation": "AFN",
+    "ConvertedINRValue": 0.9
+  },
+  {
+    "CurrencyId": 3,
+    "CountryName": "Europe",
+    "CurrencyName": "European Euro",
+    "CurrencyAbbreviation": "EUR",
+    "ConvertedINRValue": 79.32
+  },
+  {
+    "CurrencyId": 4,
+    "CountryName": "China",
+    "CurrencyName": "Chinese Yuan",
+    "CurrencyAbbreviation": "RMB",
+    "ConvertedINRValue": 11.68
+  },
+  {
+    "CurrencyId": 5,
+    "CountryName": "Japan",
+    "CurrencyName": "Japanese Yen",
+    "CurrencyAbbreviation": "YEN",
+    "ConvertedINRValue": 0.59
+  },
+  {
+    "CurrencyId": 6,
+    "CountryName": "Russia",
+    "CurrencyName": "Russian Ruble",
+    "CurrencyAbbreviation": "RUB",
+    "ConvertedINRValue": 1.33
+  },
+  {
+    "CurrencyId": 7,
+    "CountryName": "Australia",
+    "CurrencyName": "Australian Dollar",
+    "CurrencyAbbreviation": "AUD",
+    "ConvertedINRValue": 55.14
+  }
+]

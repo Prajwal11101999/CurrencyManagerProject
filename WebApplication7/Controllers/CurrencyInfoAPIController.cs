@@ -17,6 +17,12 @@ namespace WebApplication7.Controllers
     {
         private ICurrencyInfo currency = new CurrencyInfosRepository();
 
+        public CurrencyInfoAPIController()
+        {
+
+        }
+
+
         [Route("Currency/All")]
         [HttpGet]
         public ActionResult<IEnumerable<CurrencyInfo>> GetAllCurrencyInfo()
@@ -33,7 +39,7 @@ namespace WebApplication7.Controllers
 
         [Route("Currency/AddNew")]
         [HttpPost]
-        public ActionResult<IEnumerable<CurrencyInfo>> CreateNewCurrency([FromBody] CurrencyInfo currencyInfo)
+        public IActionResult CreateNewCurrency([FromBody] CurrencyInfo currencyInfo)
         {
             try
             {
@@ -52,9 +58,9 @@ namespace WebApplication7.Controllers
             return RedirectToAction("GetAllCurrencyInfo");
         }
 
-        [Route("Currency/Update/{id}")]
+        [Route("Currency/Update")]
         [HttpPut]
-        public ActionResult<IEnumerable<CurrencyInfo>> UpdateCurrency(int id, [FromBody] CurrencyInfo currencyInfo)
+        public IActionResult UpdateCurrency([FromBody] CurrencyInfo currencyInfo)
         {
             try
             {
@@ -62,23 +68,27 @@ namespace WebApplication7.Controllers
                 {
                     return BadRequest("Owner object is null");
                 }
-                var currencyinfoEntity = currency.GetCurrencyInfo(id);
+                var currencyinfoEntity = currency.GetCurrencyInfo(currencyInfo.CurrencyId);
                 if (currencyinfoEntity is null)
                 {
                     return NotFound();
                 }
-                currency.UpdateCurrency(currencyInfo);
+                else
+                {
+                    currency.UpdateCurrency(currencyInfo);
+                }
             }
             catch (Exception)
             {
                 return StatusCode(500, "Internal server error");
             }
-            return RedirectToAction("GetAllCurrencyInfo");
+            return Ok();
+            // return RedirectToAction("GetAllCurrencyInfo");
         }
 
         [Route("Currency/Delete/{id}")]
         [HttpDelete]
-        public ActionResult DeleteOwner(int id)
+        public IActionResult DeleteOwner(int id)
         {
             try
             {
@@ -96,7 +106,8 @@ namespace WebApplication7.Controllers
             {
                 return StatusCode(500, "Internal server error");
             }
-            return RedirectToAction("GetAllCurrencyInfo");
+            return Ok();
+            // return RedirectToAction("GetAllCurrencyInfo");
         }
     }
 }

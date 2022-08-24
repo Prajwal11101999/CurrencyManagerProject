@@ -22,3 +22,5 @@ C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\obj\Debug\netcorea
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Currency.Data.dll
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Currency.Data.pdb
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\obj\Debug\netcoreapp3.1\WebApplication7.csproj.CopyComplete
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Json.Net.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
