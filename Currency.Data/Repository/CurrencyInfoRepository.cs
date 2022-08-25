@@ -135,5 +135,28 @@ namespace Currency.Data.Repository
             // save CSV file
             workbook.Save("output.csv", SaveFormat.Csv);
         }
+
+        public ConversionInfo ExchangeToINR(CurrencyInfo currencyInfo, int num)
+        {
+            using (StreamReader reader = new StreamReader(jsonFile))
+            {
+                ConversionInfo conversionInfo = new ConversionInfo();
+                CurrencyInfo ci = new CurrencyInfo();
+                string CurrencyListString = reader.ReadToEnd();
+                List<CurrencyInfo> ListCurrency = JsonConvert.DeserializeObject<List<CurrencyInfo>>(CurrencyListString);
+                reader.Close();
+                if (ListCurrency != null)
+                {
+                    ci = ListCurrency.FirstOrDefault(x => x.CurrencyId == currencyInfo.CurrencyId);
+                    conversionInfo.ConvertedValue = num * ci.ConvertedINRValue;
+                    conversionInfo.Message = "The Currency Passed Is Converted to Indian Rupees!!!!!!";
+                    return conversionInfo;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

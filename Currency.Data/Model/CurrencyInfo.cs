@@ -8,4 +8,9 @@
         public string CurrencyAbbreviation { get; set; }
         public float ConvertedINRValue { get; set; }
     }
+    public class ConversionInfo
+    {
+        public float ConvertedValue { get; set; }
+        public string Message { get; set; }
+    }
 }

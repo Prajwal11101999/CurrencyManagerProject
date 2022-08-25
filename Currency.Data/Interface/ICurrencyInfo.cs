@@ -11,5 +11,6 @@ namespace Currency.Data.Interface
         void UpdateCurrency(CurrencyInfo currencyInfo);
         void DeleteCurrency(int id);
         void ConvertToCSV();
+        ConversionInfo ExchangeToINR(CurrencyInfo currencyInfo, int num);
     }
 }

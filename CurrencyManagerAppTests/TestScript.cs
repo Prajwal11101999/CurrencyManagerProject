@@ -28,5 +28,13 @@ namespace CurrencyManagerAppTests
             Console.WriteLine("The Specified CurrencyInfo Data is Fetched from the JsonFile by Controller and is Displayed.");
         }
 
+        [TestMethod]
+        public void TestCurrencyExchanger()
+        {
+            var testcontroller = new CurrencyInfoAPIController();
+            var testresult = testcontroller.CurrencyExchangeToINR(1, 49);
+            Assert.IsNotNull(testresult);
+            Console.WriteLine("The Currency is Exchanged to Indisn Rupees!!!!");
+        }
     }
 }

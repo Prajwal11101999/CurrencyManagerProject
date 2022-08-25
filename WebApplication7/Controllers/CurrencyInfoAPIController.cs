@@ -83,11 +83,34 @@ namespace WebApplication7.Controllers
             return Ok();
         }
 
+        // To Convert .JSON FIle to .CSV File
         [Route("Currency/ConvertCSV")]
         public IActionResult ConvertJsonFiletoCSV()
         {
             currency.ConvertToCSV();
             return Ok();
+        }
+
+        [Route("Currency/exchange/{num:int}/{id:int}")]
+        [HttpGet]
+        public ActionResult<ConversionInfo> CurrencyExchangeToINR(int id, int num)
+        {
+            try
+            {
+                var currencyinfoEntity = currency.GetCurrencyInfo(id);
+                if (currencyinfoEntity is null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return currency.ExchangeToINR(currencyinfoEntity, num);
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         [Route("Currency/Delete/{id}")]
