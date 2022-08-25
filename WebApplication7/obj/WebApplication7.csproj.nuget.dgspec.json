@@ -44,9 +44,21 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Aspose.Cells": {
+              "target": "Package",
+              "version": "[22.8.0, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[28.0.1, )"
+            },
             "Json.Net": {
               "target": "Package",
               "version": "[1.0.33, )"
+            },
+            "Microsoft.Recognizers.Text": {
+              "target": "Package",
+              "version": "[1.8.5, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -116,6 +128,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Aspose.Cells": {
+              "target": "Package",
+              "version": "[22.8.0, )"
+            },
             "Json.Net": {
               "target": "Package",
               "version": "[1.0.33, )"

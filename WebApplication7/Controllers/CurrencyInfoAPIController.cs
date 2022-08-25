@@ -1,14 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Currency.Data.Interface;
 using Currency.Data.Model;
 using Currency.Data.Repository;
-using System.Web;
-
 
 namespace WebApplication7.Controllers
 {
@@ -17,6 +12,7 @@ namespace WebApplication7.Controllers
     {
         private ICurrencyInfo currency = new CurrencyInfosRepository();
 
+        // Default Constructor
         public CurrencyInfoAPIController()
         {
 
@@ -36,6 +32,7 @@ namespace WebApplication7.Controllers
         {
             return currency.GetCurrencyInfo(id);
         }
+
 
         [Route("Currency/AddNew")]
         [HttpPost]
@@ -57,6 +54,7 @@ namespace WebApplication7.Controllers
             }
             return RedirectToAction("GetAllCurrencyInfo");
         }
+
 
         [Route("Currency/Update")]
         [HttpPut]
@@ -83,12 +81,18 @@ namespace WebApplication7.Controllers
                 return StatusCode(500, "Internal server error");
             }
             return Ok();
-            // return RedirectToAction("GetAllCurrencyInfo");
+        }
+
+        [Route("Currency/ConvertCSV")]
+        public IActionResult ConvertJsonFiletoCSV()
+        {
+            currency.ConvertToCSV();
+            return Ok();
         }
 
         [Route("Currency/Delete/{id}")]
         [HttpDelete]
-        public IActionResult DeleteOwner(int id)
+        public IActionResult DeleteCurrencyInfo(int id)
         {
             try
             {
@@ -107,7 +111,6 @@ namespace WebApplication7.Controllers
                 return StatusCode(500, "Internal server error");
             }
             return Ok();
-            // return RedirectToAction("GetAllCurrencyInfo");
         }
     }
 }

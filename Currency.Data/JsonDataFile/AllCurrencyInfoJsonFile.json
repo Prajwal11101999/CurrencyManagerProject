@@ -4,7 +4,7 @@
     "CountryName": "United States of America",
     "CurrencyName": "American Dollar",
     "CurrencyAbbreviation": "USD",
-    "ConvertedINRValue": 79.76
+    "ConvertedINRValue": 79.77
   },
   {
     "CurrencyId": 2,
@@ -17,7 +17,7 @@
     "CurrencyId": 3,
     "CountryName": "Europe",
     "CurrencyName": "European Euro",
-    "CurrencyAbbreviation": "EUR",
+    "CurrencyAbbreviation": "EURO",
     "ConvertedINRValue": 79.32
   },
   {

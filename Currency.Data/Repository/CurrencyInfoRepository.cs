@@ -3,16 +3,23 @@ using System.IO;
 using System.Linq;
 using Currency.Data.Interface;
 using Currency.Data.Model;
-using System.Text.Json;
-using Newtonsoft.Json.Linq;
-using Json.Net;
 using Newtonsoft.Json;
+using Aspose.Cells;
+using Aspose.Cells.Utility;
+using System.Globalization;
 
 namespace Currency.Data.Repository
 {
     public class CurrencyInfosRepository : ICurrencyInfo
     {
+
+        // Storing the address of the JSON File in String.
         public string jsonFile = @"C:\Users\PB65852\source\repos\WebApplication7\Currency.Data\JsonDataFile\AllCurrencyInfoJsonFile.json";
+
+        private CultureInfo Culture = new CultureInfo("en-US");
+
+        // Defination of the function to get all Objects in the JSON File.
+        // Defination of Interface function in ICurrencyInfo Class(List<CurrencyInfo> GetAllCurrencyInfo()).
         public List<CurrencyInfo> GetAllCurrencyInfo()
         {
             using (StreamReader reader = new StreamReader(jsonFile))
@@ -28,30 +35,11 @@ namespace Currency.Data.Repository
                 {
                     return null;
                 }
-                //try
-                //{
-                //    string CurrencyListString = reader.ReadToEnd();
-                //    List<CurrencyInfo> ListCurrency = JsonConvert.DeserializeObject<List<CurrencyInfo>>(CurrencyListString);
-                //    if (ListCurrency != null)
-                //    {
-                //        return ListCurrency;
-                //    }
-                //    else
-                //    {
-                //        return null;
-                //    }
-                //}
-                //catch (System.Exception)
-                //{
-                //    throw;
-                //}
-                //finally
-                //{
-                //    reader.Close();
-                //}
             }
         }
 
+        // Defination of the function to get the specified Objects in the JSON File.
+        // Defination of Interface function in ICurrencyInfo Class(CurrencyInfo GetCurrencyInfo(int id)).
         public CurrencyInfo GetCurrencyInfo(int id)
         {
             using (StreamReader reader = new StreamReader(jsonFile))
@@ -67,53 +55,28 @@ namespace Currency.Data.Repository
                 {
                     return null;
                 }
-                //try
-                //{
-                //    string CurrencyListString = reader.ReadToEnd();
-                //    List<CurrencyInfo> ListCurrency = JsonConvert.DeserializeObject<List<CurrencyInfo>>(CurrencyListString);
-                //    if (ListCurrency != null)
-                //    {
-                //        return ListCurrency.FirstOrDefault(x => x.CurrencyId == id);
-                //    }
-                //    else
-                //    {
-                //        return null;
-                //    }
-                //}
-                //catch (System.Exception)
-                //{
-                //    throw;
-                //}
-                //finally
-                //{
-                //    reader.Close();
-                //
             }
         }
 
+        // Defination of the function to add new Objects to the JSON File.
+        // Defination of Interface function in ICurrencyInfo Class(void AddNewCurrency(CurrencyInfo currencyInfo)).
         public void AddNewCurrency(CurrencyInfo currencyInfo)
         {
             using(StreamReader reader = new StreamReader(jsonFile))
             {
                 string CurrencyListString = reader.ReadToEnd();
                 List<CurrencyInfo> ListCurrency = JsonConvert.DeserializeObject<List<CurrencyInfo>>(CurrencyListString);
-                ListCurrency.Add(currencyInfo);
+
+                // ListCurrency.Add(currencyInfo);
 
                 string UpdatedJsonCurrencyList = JsonConvert.SerializeObject(ListCurrency, Formatting.Indented);
                 reader.Close();
                 File.WriteAllText(jsonFile, UpdatedJsonCurrencyList);
             }
-            //var ListCurrency = System.Text.Json.JsonSerializer.Deserialize<List<CurrencyInfo>>(jsonFile);
-            //if (ListCurrency.Count == 0)
-            //{
-            //    ListCurrency.Add(new CurrencyInfo { CurrencyId = 1, CountryName = currencyInfo.CountryName, CurrencyName = currencyInfo.CurrencyName, CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation, ConvertedINRValue = currencyInfo.ConvertedINRValue });
-            //}
-            //else
-            //{
-            //    ListCurrency.Add(new CurrencyInfo { CurrencyId = ListCurrency.Count + 1, CountryName = currencyInfo.CountryName, CurrencyName = currencyInfo.CurrencyName, CurrencyAbbreviation = currencyInfo.CurrencyAbbreviation, ConvertedINRValue = currencyInfo.ConvertedINRValue });
-            //}
         }
 
+        // Defination of the function to update an existing Objects in the JSON File.
+        // Defination of Interface function in ICurrencyInfo Class(void UpdateCurrency(CurrencyInfo currencyInfo)).
         public void UpdateCurrency(CurrencyInfo currencyInfo)
         {
             using (StreamReader reader = new StreamReader(jsonFile))
@@ -138,6 +101,8 @@ namespace Currency.Data.Repository
             }
         }
 
+        // Defination of the function to delete an existing Objects in the JSON File.
+        // Defination of Interface function in ICurrencyInfo Class(void DeleteCurrency(int id)).
         public void DeleteCurrency(int id)
         {
             using (StreamReader reader = new StreamReader(jsonFile))
@@ -150,6 +115,25 @@ namespace Currency.Data.Repository
                 reader.Close();
                 File.WriteAllText(jsonFile, UpdatedJsonCurrencyList);
             }
+        }
+
+        public void ConvertToCSV()
+        {
+            string JsonString = File.ReadAllText(jsonFile);
+            var workbook = new Workbook();
+
+            // access default empty worksheet
+            var worksheet = workbook.Worksheets[0];
+
+            // set JsonLayoutOptions for formatting
+            var layoutOptions = new JsonLayoutOptions();
+            layoutOptions.ArrayAsTable = true;
+
+            // import JSON data to CSV
+            JsonUtility.ImportData(JsonString, worksheet.Cells, 7, 5, layoutOptions);
+
+            // save CSV file
+            workbook.Save("output.csv", SaveFormat.Csv);
         }
     }
 }

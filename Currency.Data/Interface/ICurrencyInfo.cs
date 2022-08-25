@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Currency.Data.Model;
 
 namespace Currency.Data.Interface
@@ -12,5 +10,6 @@ namespace Currency.Data.Interface
         void AddNewCurrency(CurrencyInfo currencyInfo);
         void UpdateCurrency(CurrencyInfo currencyInfo);
         void DeleteCurrency(int id);
+        void ConvertToCSV();
     }
 }

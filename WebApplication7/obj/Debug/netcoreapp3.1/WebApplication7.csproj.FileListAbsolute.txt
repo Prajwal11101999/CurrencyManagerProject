@@ -24,3 +24,13 @@ C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcorea
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\obj\Debug\netcoreapp3.1\WebApplication7.csproj.CopyComplete
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Json.Net.dll
 C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Aspose.Cells.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\System.Formats.Asn1.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\CsvHelper.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Microsoft.Recognizers.Definitions.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\Microsoft.Recognizers.Text.dll
+C:\Users\PB65852\source\repos\WebApplication7\WebApplication7\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
