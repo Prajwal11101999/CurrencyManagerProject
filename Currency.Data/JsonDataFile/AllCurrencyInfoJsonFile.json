@@ -47,5 +47,12 @@
     "CurrencyName": "Australian Dollar",
     "CurrencyAbbreviation": "AUD",
     "ConvertedINRValue": 55.14
+  },
+  {
+    "CurrencyId": 4,
+    "CountryName": "Canada",
+    "CurrencyName": "Canadian Dollar",
+    "CurrencyAbbreviation": "ASD",
+    "ConvertedINRValue": 61.52
   }
 ]

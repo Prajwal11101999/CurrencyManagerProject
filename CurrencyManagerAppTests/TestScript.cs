@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebApplication7.Controllers;
 using System;
+using Currency.Data.Model;
+using System.Web.Http.Results;
 
 namespace CurrencyManagerAppTests
 {
@@ -32,9 +34,9 @@ namespace CurrencyManagerAppTests
         public void TestCurrencyExchanger()
         {
             var testcontroller = new CurrencyInfoAPIController();
-            var testresult = testcontroller.CurrencyExchangeToINR(1, 49);
+            var testresult = testcontroller.CurrencyExchangeToINR(8, 34);
             Assert.IsNotNull(testresult);
-            Console.WriteLine("The Currency is Exchanged to Indisn Rupees!!!!");
+            Console.WriteLine("The Currency is Exchanged to Indian Rupees!!!!");
         }
     }
 }

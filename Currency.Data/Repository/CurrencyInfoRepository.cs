@@ -66,9 +66,18 @@ namespace Currency.Data.Repository
             {
                 string CurrencyListString = reader.ReadToEnd();
                 List<CurrencyInfo> ListCurrency = JsonConvert.DeserializeObject<List<CurrencyInfo>>(CurrencyListString);
-
-                // ListCurrency.Add(currencyInfo);
-
+                for (int i = 0; i < ListCurrency.Count; i++)
+                {
+                    if (ListCurrency[i].CurrencyId == currencyInfo.CurrencyId)
+                    {
+                        System.Console.WriteLine("The Currency ID Already Exists.");
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                ListCurrency.Add(currencyInfo);
                 string UpdatedJsonCurrencyList = JsonConvert.SerializeObject(ListCurrency, Formatting.Indented);
                 reader.Close();
                 File.WriteAllText(jsonFile, UpdatedJsonCurrencyList);
@@ -149,7 +158,8 @@ namespace Currency.Data.Repository
                 {
                     ci = ListCurrency.FirstOrDefault(x => x.CurrencyId == currencyInfo.CurrencyId);
                     conversionInfo.ConvertedValue = num * ci.ConvertedINRValue;
-                    conversionInfo.Message = "The Currency Passed Is Converted to Indian Rupees!!!!!!";
+
+                    conversionInfo.Message = "The " + ci.CurrencyName + " Currency Passed Is Converted to Indian Rupees!!!!!!";
                     return conversionInfo;
                 }
                 else

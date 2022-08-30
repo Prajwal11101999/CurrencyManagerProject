@@ -91,6 +91,7 @@ namespace WebApplication7.Controllers
             return Ok();
         }
 
+        // Exchang the currency with the given ID to Indian Rupees
         [Route("Currency/exchange/{num:int}/{id:int}")]
         [HttpGet]
         public ActionResult<ConversionInfo> CurrencyExchangeToINR(int id, int num)
